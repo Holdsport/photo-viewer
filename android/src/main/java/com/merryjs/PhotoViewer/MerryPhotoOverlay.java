@@ -28,6 +28,7 @@ public class MerryPhotoOverlay extends RelativeLayout {
     private TextView tvShare;
     private TextView tvClose;
     private TextView tvMore;
+    private TextView tvCmtText;
     private ImageViewer imageViewer;
     private String sharingText;
     public void setImageViewer(ImageViewer imageViewer){
@@ -64,6 +65,10 @@ public class MerryPhotoOverlay extends RelativeLayout {
 
     public void setDescription(String description) {
         tvDescription.setText(description);
+    }
+
+    public void setCmtText(String comment) {
+        tvCmtText.setText(comment);
     }
 
     public void setDescriptionTextColor(int color) {
@@ -118,7 +123,7 @@ public class MerryPhotoOverlay extends RelativeLayout {
             }
         });
         tvClose = (TextView) view.findViewById(R.id.btnClose);
-        tvClose.setTypeface(Typeface.createFromAsset(getContext().getAssets(), "fonts/fontawesome-webfont.ttf"));
+        tvClose.setTypeface(Typeface.createFromAsset(getContext().getAssets(), "fonts/materialdesignicons-webfont.ttf"));
         tvClose.setOnClickListener(new OnClickListener() {
 
             @Override
@@ -135,8 +140,18 @@ public class MerryPhotoOverlay extends RelativeLayout {
                 imageViewer.onActionMore(i);
             }
         });
+        tvCmtText = (TextView) view.findViewById(R.id.tvCmtText);
+        tvCmtText.setOnClickListener(new OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                int i = Integer.parseInt(v.getTag().toString());
+                imageViewer.onComment(i);
+                imageViewer.onDismiss();
+            }
+        });
         tvComment = (TextView) view.findViewById(R.id.btnComment);
-        tvComment.setTypeface(Typeface.createFromAsset(getContext().getAssets(), "fonts/fontawesome-webfont.ttf"));
+        tvComment.setTypeface(Typeface.createFromAsset(getContext().getAssets(), "fonts/materialdesignicons-webfont.ttf"));
         tvComment.setOnClickListener(new OnClickListener() {
 
             @Override

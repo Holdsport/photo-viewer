@@ -148,6 +148,7 @@ public class MerryPhotoView extends View {
                 overlayView.setShareContext(url);
                 overlayView.setPosition(position);
                 overlayView.setDescription(merryPhotoData.summary);
+                overlayView.setCmtText(merryPhotoData.comment);
                 overlayView.setTitleText(merryPhotoData.title);
 
                 int summaryColor = Color.WHITE;
@@ -180,6 +181,7 @@ public class MerryPhotoView extends View {
                 WritableMap writableMap = Arguments.createMap();
                 writableMap.putString("title", merryPhotoData.title);
                 writableMap.putString("summary", merryPhotoData.summary);
+                writableMap.putString("comment", merryPhotoData.comment);
                 writableMap.putInt("summaryColor", merryPhotoData.summaryColor);
                 writableMap.putInt("titleColor", merryPhotoData.titleColor);
                 writableMap.putMap("source", Utils.toWritableMap(merryPhotoData.source));

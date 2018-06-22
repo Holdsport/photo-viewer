@@ -37,6 +37,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
+        android:background="#80000000"
         android:padding="12dp">
 
         <TextView
@@ -52,6 +53,12 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/tvTitle" />
 
+        <TextView
+            android:id="@+id/tvCmtText"
+            style="@style/CommentText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvDescription" />
         <View
           android:id="@+id/Line"
           android:layout_marginTop="10dp"
@@ -60,28 +67,31 @@
           android:background="@color/accentText"
           android:layout_below="@id/tvDescription" />
 
+          <TextView
+              android:id="@+id/btnComment"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_alignParentEnd="true"
+              android:gravity="right"
+              android:layout_alignParentRight="true"
+              android:textColor="@color/accentText"
+              android:layout_marginTop="10dp"
+              android:textSize="28dp"
+              android:layout_below="@id/Line"
+              android:text="@string/comment" />
+
         <Button
             android:id="@+id/btnMore"
             style="@style/SimpleButtonMore"
             android:layout_width="30dp"
             android:layout_height="30dp"
-            android:gravity="right"
+            android:gravity="left"
             android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
+            android:layout_alignParentLeft="true"
             android:layout_below="@id/Line"
             android:text="@string/more" />
 
-        <TextView
-            android:id="@+id/btnComment"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentLeft="true"
-            android:textColor="@color/accentText"
-            android:layout_marginTop="10dp"
-            android:textSize="28dp"
-            android:layout_below="@id/Line"
-            android:text="@string/comment" />
+
 
     </RelativeLayout>
 </merge>

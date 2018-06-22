@@ -77,6 +77,10 @@ public class MerryPhotoViewManager extends SimpleViewManager<MerryPhotoView> {
                     merryPhotoData.summary = rm.getString("summary");
 
                 }
+                if (rm.hasKey("comment")) {
+                    merryPhotoData.summary = rm.getString("comment");
+
+                }
                 if (rm.hasKey("summaryColor")) {
                     merryPhotoData.summaryColor = rm.getInt("summaryColor");
 

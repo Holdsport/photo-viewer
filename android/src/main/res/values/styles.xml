@@ -21,12 +21,16 @@
     </style>
     <style name="DescriptionText" parent="AppTheme">
         <item name="android:textColor">@color/accentText</item>
-        <item name="android:maxLines">5</item>
+        <item name="android:maxLines">2</item>
         <item name="android:ellipsize">end</item>
         <item name="android:textSize">12sp</item>
-
     </style>
-
+    <style name="CommentText" parent="AppTheme">
+        <item name="android:textColor">@color/accentText</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:textSize">14sp</item>
+    </style>
     <style name="TitleText" parent="AppTheme">
         <item name="android:textSize">16sp</item>
         <item name="android:textColor">@color/accentText</item>

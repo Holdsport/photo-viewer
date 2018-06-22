@@ -11,6 +11,7 @@ public class MerryPhotoData {
     public ReadableMap source;
     public String title;
     public String summary;
+    public String comment;
     public int titleColor;
     public int summaryColor;
 }
