@@ -16,10 +16,13 @@
     <Button
         android:id="@+id/btnClose"
         style="@style/SimpleButtonStyle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:gravity="right"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="12dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
         android:text="@string/close" />
     <Button
         android:id="@+id/btnShare"
@@ -29,18 +32,18 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:text="@string/share" />
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:padding="16dp">
+        android:padding="12dp">
 
         <TextView
             android:id="@+id/tvTitle"
             style="@style/TitleText"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="6dp" />
+            android:layout_height="wrap_content" />
 
         <TextView
             android:id="@+id/tvDescription"
@@ -48,5 +51,37 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/tvTitle" />
+
+        <View
+          android:id="@+id/Line"
+          android:layout_marginTop="10dp"
+          android:layout_width="match_parent"
+          android:layout_height="1dp"
+          android:background="@color/accentText"
+          android:layout_below="@id/tvDescription" />
+
+        <Button
+            android:id="@+id/btnMore"
+            style="@style/SimpleButtonMore"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:gravity="right"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_below="@id/Line"
+            android:text="@string/more" />
+
+        <TextView
+            android:id="@+id/btnComment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentLeft="true"
+            android:textColor="@color/accentText"
+            android:layout_marginTop="10dp"
+            android:textSize="28dp"
+            android:layout_below="@id/Line"
+            android:text="@string/comment" />
+
     </RelativeLayout>
 </merge>

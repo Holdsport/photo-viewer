@@ -132,6 +132,8 @@ public class MerryPhotoViewManager extends SimpleViewManager<MerryPhotoView> {
     public Map<String, Object> getExportedCustomDirectEventTypeConstants() {
         return MapBuilder.<String, Object>builder()
                 .put("onChange", MapBuilder.of("registrationName", "onChange"))
+								.put("onActionMore", MapBuilder.of("registrationName", "onActionMore"))
+								.put("onComment", MapBuilder.of("registrationName", "onComment"))
                 .put("onDismiss", MapBuilder.of("registrationName", "onDismiss")).build();
     }
 }

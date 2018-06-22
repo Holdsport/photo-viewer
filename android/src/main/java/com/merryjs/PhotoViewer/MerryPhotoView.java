@@ -113,10 +113,12 @@ public class MerryPhotoView extends View {
                 .setOnDismissListener(getDismissListener());
 
 
+        builder.setOnActionMoreListener(getActionMoreListener());
+        builder.setOnCommentListener(getCommentListener());
         builder.setImageChangeListener(getImageChangeListener());
         builder.setStartPosition(getInitial());
         builder.hideStatusBar(isHideStatusBar());
-        // builder.setCustomImageRequestBuilder(getLocalImage());
+        builder.setCustomImageRequestBuilder(getLocalImage());
         builder.setCustomDraweeHierarchyBuilder(progressBarDrawableBuilder());
         overlayView = new MerryPhotoOverlay(context);
         builder.setOverlayView(overlayView);
@@ -144,7 +146,7 @@ public class MerryPhotoView extends View {
                 String url = merryPhotoData.source.getString("uri");
 //                default use url
                 overlayView.setShareContext(url);
-
+                overlayView.setPosition(position);
                 overlayView.setDescription(merryPhotoData.summary);
                 overlayView.setTitleText(merryPhotoData.title);
 
@@ -163,6 +165,7 @@ public class MerryPhotoView extends View {
 //                }
 //
                 overlayView.setPagerText((position + 1) + " / " + getData().length);
+//
                 if (merryPhotoData.titleColor != 0) {
 
                     titleColor = merryPhotoData.titleColor;
@@ -173,6 +176,7 @@ public class MerryPhotoView extends View {
                 }
                 overlayView.setDescriptionTextColor(summaryColor);
 
+                // onChange event from js side
                 WritableMap writableMap = Arguments.createMap();
                 writableMap.putString("title", merryPhotoData.title);
                 writableMap.putString("summary", merryPhotoData.summary);
@@ -181,12 +185,15 @@ public class MerryPhotoView extends View {
                 writableMap.putMap("source", Utils.toWritableMap(merryPhotoData.source));
 
                 // onChange event from js side
-                WritableMap map = Arguments.createMap();
+        				WritableMap map = Arguments.createMap();
                 map.putMap("photo", writableMap);
-                map.putInt("index", position);
+        				map.putInt("index", position);
 
-                onNavigateToPhoto(map);
-
+        				onNavigateToPhoto(map);
+               //
+               // if (options.shareTextColor != null) {
+               //     overlayView.setShareTextColor(options.shareTextColor);
+               // }
             }
         };
     }
@@ -206,14 +213,50 @@ public class MerryPhotoView extends View {
     /**
      * on photo change
      */
-    protected void onNavigateToPhoto(WritableMap map) {
-        final Context context = getContext();
-        if (context instanceof ReactContext) {
-            ((ReactContext) context).getJSModule(RCTEventEmitter.class).receiveEvent(getId(), "onChange", map);
-        }
+  	protected void onNavigateToPhoto(WritableMap map) {
+  		final Context context = getContext();
+  		if (context instanceof ReactContext) {
+  			((ReactContext) context).getJSModule(RCTEventEmitter.class).receiveEvent(getId(), "onChange", map);
+  		}
+  	}
+
+    /**
+     * on click more
+     */
+  	public void onDialogActionMore(WritableMap map) {
+  		final Context context = getContext();
+  		if (context instanceof ReactContext) {
+  			((ReactContext) context).getJSModule(RCTEventEmitter.class).receiveEvent(getId(), "onActionMore", map);
+  		}
+  	}
+  	public void onDialogCommentMore(WritableMap map) {
+  		final Context context = getContext();
+  		if (context instanceof ReactContext) {
+  			((ReactContext) context).getJSModule(RCTEventEmitter.class).receiveEvent(getId(), "onComment", map);
+  		}
+  	}
+    private ImageViewer.OnActionMoreListener getActionMoreListener() {
+        return new ImageViewer.OnActionMoreListener() {
+            @Override
+            public void onActionMore(int position) {
+                WritableMap map = Arguments.createMap();
+                map.putInt("index", position);
+                onDialogActionMore(map);
+            }
+        };
+    }
+    private ImageViewer.OnCommentListener getCommentListener() {
+        return new ImageViewer.OnCommentListener() {
+            @Override
+            public void onComment(int position) {
+              WritableMap map = Arguments.createMap();
+              map.putInt("index", position);
+              onDialogCommentMore(map);
+            }
+        };
     }
 
-    //
+    // on DisMiss
     private ImageViewer.OnDismissListener getDismissListener() {
         return new ImageViewer.OnDismissListener() {
             @Override

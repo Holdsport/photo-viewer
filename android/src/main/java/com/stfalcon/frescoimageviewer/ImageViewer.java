@@ -111,6 +111,18 @@ public class ImageViewer implements OnDismissListener, DialogInterface.OnKeyList
         dialog.dismiss();
     }
 
+    public void onActionMore(int position) {
+      if (builder.actionMoreListener != null) {
+          builder.actionMoreListener.onActionMore(position);
+      }
+    }
+
+    public void onComment(int position) {
+      if (builder.onCommentListener != null) {
+          builder.onCommentListener.onComment(position);
+      }
+    }
+
     /**
      * Resets image on {@literal KeyEvent.KEYCODE_BACK} to normal scale if needed, otherwise - hide the viewer.
      */
@@ -141,7 +153,12 @@ public class ImageViewer implements OnDismissListener, DialogInterface.OnKeyList
     public interface OnImageChangeListener {
         void onImageChange(int position);
     }
-
+    public interface OnActionMoreListener {
+        void onActionMore(int position);
+    }
+    public interface OnCommentListener {
+        void onComment(int position);
+    }
     /**
      * Interface definition for a callback to be invoked when viewer was dismissed
      */
@@ -202,6 +219,8 @@ public class ImageViewer implements OnDismissListener, DialogInterface.OnKeyList
         private @ColorInt int backgroundColor = Color.BLACK;
         private int startPosition;
         private OnImageChangeListener imageChangeListener;
+        private OnActionMoreListener actionMoreListener;
+        private OnCommentListener onCommentListener;
         private OnDismissListener onDismissListener;
         private View overlayView;
         private int imageMarginPixels;
@@ -274,7 +293,14 @@ public class ImageViewer implements OnDismissListener, DialogInterface.OnKeyList
             this.imageChangeListener = imageChangeListener;
             return this;
         }
-
+        public Builder setOnActionMoreListener(OnActionMoreListener actionMoreListener) {
+            this.actionMoreListener = actionMoreListener;
+            return this;
+        }
+        public Builder setOnCommentListener(OnCommentListener onCommentListener) {
+            this.onCommentListener = onCommentListener;
+            return this;
+        }
         /**
          * Set overlay view
          *

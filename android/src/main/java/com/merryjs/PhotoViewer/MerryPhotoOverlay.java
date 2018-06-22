@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.graphics.Typeface;
 
 import com.merryjs.PhotoViewer.R;
 import com.stfalcon.frescoimageviewer.ImageViewer;
@@ -22,10 +23,11 @@ import com.stfalcon.frescoimageviewer.ImageViewer;
 public class MerryPhotoOverlay extends RelativeLayout {
     private TextView tvTitle;
     private TextView tvTitlePager;
-
+    private TextView tvComment;
     private TextView tvDescription;
     private TextView tvShare;
     private TextView tvClose;
+    private TextView tvMore;
     private ImageViewer imageViewer;
     private String sharingText;
     public void setImageViewer(ImageViewer imageViewer){
@@ -84,6 +86,11 @@ public class MerryPhotoOverlay extends RelativeLayout {
         tvTitle.setTextColor(color);
     }
 
+    public void setPosition(int position) {
+        tvComment.setTag(position);
+        tvMore.setTag(position);
+    }
+
     public void setTitleText(String text) {
         tvTitle.setText(text);
     }
@@ -111,11 +118,32 @@ public class MerryPhotoOverlay extends RelativeLayout {
             }
         });
         tvClose = (TextView) view.findViewById(R.id.btnClose);
+        tvClose.setTypeface(Typeface.createFromAsset(getContext().getAssets(), "fonts/fontawesome-webfont.ttf"));
         tvClose.setOnClickListener(new OnClickListener() {
 
             @Override
             public void onClick(View v) {
                imageViewer.onDismiss();
+            }
+        });
+        tvMore = (TextView) view.findViewById(R.id.btnMore);
+        tvMore.setOnClickListener(new OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                int i = Integer.parseInt(v.getTag().toString());
+                imageViewer.onActionMore(i);
+            }
+        });
+        tvComment = (TextView) view.findViewById(R.id.btnComment);
+        tvComment.setTypeface(Typeface.createFromAsset(getContext().getAssets(), "fonts/fontawesome-webfont.ttf"));
+        tvComment.setOnClickListener(new OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                int i = Integer.parseInt(v.getTag().toString());
+                imageViewer.onComment(i);
+                imageViewer.onDismiss();
             }
         });
     }
