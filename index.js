@@ -34,6 +34,20 @@ class MerryPhotoView extends React.Component {
                 onChange(rest);
             }
         };
+		this.onComment = (event) => {
+            const { onComment } = this.props;
+            if (onComment) {
+                const { target, ...rest } = event.nativeEvent;
+                onComment(rest);
+            }
+        };
+		this.onActionMore = (event) => {
+            const { onActionMore } = this.props;
+            if (onActionMore) {
+                const { target, ...rest } = event.nativeEvent;
+                onActionMore(rest);
+            }
+        };
     }
     render() {
         // nothing
@@ -51,7 +65,7 @@ class MerryPhotoView extends React.Component {
         if (initial > dataCopy.length) {
             startPosition = dataCopy.length;
         }
-        return (<RNMerryPhotoView {...props} initial={startPosition} data={transformData} onChange={this.onChange}/>);
+        return (<RNMerryPhotoView {...props} onActionMore={this.onActionMore} onComment={this.onComment} initial={startPosition} data={transformData} onChange={this.onChange}/>);
     }
 }
 MerryPhotoView.propTypes = {

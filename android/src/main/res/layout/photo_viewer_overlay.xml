@@ -2,37 +2,43 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
-
-    <TextView
-        android:id="@+id/tvTitlePager"
-        style="@style/TitleText"
-        android:layout_width="wrap_content"
+	<RelativeLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:padding="16dp"
-        android:textAlignment="center" />
+        android:background="#80000000"
+        android:padding="12dp">
+		<TextView
+			android:id="@+id/tvTitlePager"
+			style="@style/TitleText"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_alignParentTop="true"
+			android:layout_centerHorizontal="true"
+			android:padding="16dp"
+			android:textAlignment="center" />
 
-    <Button
-        android:id="@+id/btnClose"
-        style="@style/SimpleButtonStyle"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:gravity="right"
-        android:layout_marginTop="20dp"
-        android:layout_marginRight="12dp"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:text="@string/close" />
-    <Button
-        android:id="@+id/btnShare"
-        style="@style/SimpleButtonStyle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:text="@string/share" />
-
+		<Button
+			android:id="@+id/btnClose"
+			style="@style/SimpleButtonStyle"
+			android:layout_width="30dp"
+			android:layout_height="30dp"
+			android:gravity="right"
+			android:layout_marginTop="10dp"
+			android:layout_alignParentEnd="true"
+			android:layout_alignParentRight="true"
+			android:text="@string/close" />
+		<Button
+			android:id="@+id/btnShare"
+			style="@style/SimpleButtonStyle"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:gravity="left"
+			android:layout_alignParentEnd="true"
+			android:layout_alignParentLeft="true"
+			android:text="@string/share" />
+	</RelativeLayout>
+	
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -59,39 +65,36 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/tvDescription" />
+			
         <View
-          android:id="@+id/Line"
-          android:layout_marginTop="10dp"
-          android:layout_width="match_parent"
-          android:layout_height="1dp"
-          android:background="@color/accentText"
-          android:layout_below="@id/tvDescription" />
+			android:id="@+id/Line"
+			android:layout_marginTop="10dp"
+			android:layout_width="match_parent"
+			android:layout_height="1dp"
+			android:background="@color/accentText"
+			android:layout_below="@id/tvCmtText" />
 
-          <TextView
-              android:id="@+id/btnComment"
-              android:layout_width="wrap_content"
-              android:layout_height="wrap_content"
-              android:layout_alignParentEnd="true"
-              android:gravity="right"
-              android:layout_alignParentRight="true"
-              android:textColor="@color/accentText"
-              android:layout_marginTop="10dp"
-              android:textSize="28dp"
-              android:layout_below="@id/Line"
-              android:text="@string/comment" />
+		<TextView
+			android:id="@+id/btnComment"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_alignParentEnd="true"
+			android:textColor="@color/accentText"
+			android:layout_marginTop="10dp"
+			android:textSize="28dp"
+			android:layout_below="@id/Line"
+			android:text="@string/comment" />
 
         <Button
             android:id="@+id/btnMore"
             style="@style/SimpleButtonMore"
             android:layout_width="30dp"
             android:layout_height="30dp"
-            android:gravity="left"
+            android:gravity="right"
             android:layout_alignParentEnd="true"
-            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
             android:layout_below="@id/Line"
             android:text="@string/more" />
-
-
 
     </RelativeLayout>
 </merge>
