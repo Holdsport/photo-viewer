@@ -38,7 +38,7 @@
 			android:layout_alignParentLeft="true"
 			android:text="@string/share" />
 	</RelativeLayout>
-	
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -65,7 +65,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/tvDescription" />
-			
+
         <View
 			android:id="@+id/Line"
 			android:layout_marginTop="10dp"

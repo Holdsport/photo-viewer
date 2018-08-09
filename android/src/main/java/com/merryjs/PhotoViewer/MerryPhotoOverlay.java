@@ -132,6 +132,7 @@ public class MerryPhotoOverlay extends RelativeLayout {
             }
         });
         tvMore = (TextView) view.findViewById(R.id.btnMore);
+        tvMore.setTypeface(Typeface.createFromAsset(getContext().getAssets(), "fonts/materialdesignicons-webfont.ttf"));
         tvMore.setOnClickListener(new OnClickListener() {
 
             @Override

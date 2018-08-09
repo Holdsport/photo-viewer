@@ -34,14 +34,14 @@ class MerryPhotoView extends React.Component {
                 onChange(rest);
             }
         };
-		this.onComment = (event) => {
+        this.onComment = (event) => {
             const { onComment } = this.props;
             if (onComment) {
                 const { target, ...rest } = event.nativeEvent;
                 onComment(rest);
             }
         };
-		this.onActionMore = (event) => {
+        this.onActionMore = (event) => {
             const { onActionMore } = this.props;
             if (onActionMore) {
                 const { target, ...rest } = event.nativeEvent;
@@ -98,6 +98,8 @@ MerryPhotoView.propTypes = {
     hideShareButton: PropTypes.bool,
     onDismiss: PropTypes.func.isRequired,
     onChange: PropTypes.func,
+    onComment: PropTypes.func,
+    onActionMore: PropTypes.func,
     shareText: PropTypes.string,
     ...View.propTypes
 };
