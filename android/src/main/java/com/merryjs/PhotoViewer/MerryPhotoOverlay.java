@@ -65,10 +65,12 @@ public class MerryPhotoOverlay extends RelativeLayout {
 
     public void setDescription(String description) {
         tvDescription.setText(description);
+        tvDescription.setVisibility((description != null) ? View.VISIBLE : View.GONE);
     }
 
     public void setCmtText(String comment) {
         tvCmtText.setText(comment);
+        tvCmtText.setVisibility((comment != null) ? View.VISIBLE : View.GONE);
     }
 
     public void setDescriptionTextColor(int color) {
@@ -98,6 +100,7 @@ public class MerryPhotoOverlay extends RelativeLayout {
 
     public void setTitleText(String text) {
         tvTitle.setText(text);
+        tvTitle.setVisibility((text != null) ? View.VISIBLE : View.GONE);
     }
 
     private void sendShareIntent() {

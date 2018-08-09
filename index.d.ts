@@ -13,6 +13,7 @@ export interface Photo {
     source: ImageURISource;
     title?: string;
     summary?: string;
+    comment?: string;
     titleColor?: string | number;
     summaryColor?: string | number;
 }
@@ -54,6 +55,8 @@ export interface MerryPhotoViewPorps {
         index: number;
         photo: Photo;
     }) => void;
+    onComment?: (data) => void;
+    onActionMore?: (data) => void;
 }
 declare class MerryPhotoView extends React.Component<MerryPhotoViewPorps, any> {
     static propTypes: {
@@ -65,6 +68,8 @@ declare class MerryPhotoView extends React.Component<MerryPhotoViewPorps, any> {
         hideShareButton: PropTypes.Requireable<any>;
         onDismiss: PropTypes.Validator<any>;
         onChange: PropTypes.Requireable<any>;
+        onComment: PropTypes.Requireable<any>;
+        onActionMore: PropTypes.Requireable<any>;
         shareText: PropTypes.Requireable<any>;
     } | {
         accessibilityLabel?: ((object: ViewProperties, key: string, componentName: string, ...rest: any[]) => Error | null) | undefined;
@@ -110,6 +115,8 @@ declare class MerryPhotoView extends React.Component<MerryPhotoViewPorps, any> {
         hideShareButton: PropTypes.Requireable<any>;
         onDismiss: PropTypes.Validator<any>;
         onChange: PropTypes.Requireable<any>;
+        onComment: PropTypes.Requireable<any>;
+        onActionMore: PropTypes.Requireable<any>;
         shareText: PropTypes.Requireable<any>;
     };
     static defaultProps: {

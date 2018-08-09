@@ -67,6 +67,8 @@ export interface MerryPhotoViewPorps {
       photo: Photo;
     }
   ) => void;
+  onComment?: (data: any) => void;
+  onActionMore?: (data: any) => void;
 }
 
 class MerryPhotoView extends React.Component<MerryPhotoViewPorps, any> {
@@ -105,6 +107,8 @@ class MerryPhotoView extends React.Component<MerryPhotoViewPorps, any> {
     hideShareButton: PropTypes.bool,
     onDismiss: PropTypes.func.isRequired,
     onChange: PropTypes.func,
+    onComment: PropTypes.func,
+    onActionMore: PropTypes.func,
     shareText: PropTypes.string,
     ...View.propTypes
   };
@@ -141,6 +145,20 @@ class MerryPhotoView extends React.Component<MerryPhotoViewPorps, any> {
       onChange(rest);
     }
   };
+  onComment = (event: any) => {
+      const { onComment } = this.props;
+      if (onComment) {
+          const { target, ...rest } = event.nativeEvent;
+          onComment(rest);
+      }
+  };
+  onActionMore = (event: any) => {
+      const { onActionMore } = this.props;
+      if (onActionMore) {
+          const { target, ...rest } = event.nativeEvent;
+          onActionMore(rest);
+      }
+  };
   render() {
     // nothing
     if (this.props.visible === false) {
@@ -167,6 +185,8 @@ class MerryPhotoView extends React.Component<MerryPhotoViewPorps, any> {
         initial={startPosition}
         data={transformData}
         onChange={this.onChange}
+        onComment={this.onComment}
+        onActionMore={this.onActionMore}
       />
     );
   }
