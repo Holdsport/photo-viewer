@@ -151,7 +151,7 @@ public class MerryPhotoOverlay extends RelativeLayout {
             public void onClick(View v) {
                 int i = Integer.parseInt(v.getTag().toString());
                 imageViewer.onComment(i);
-                imageViewer.onDismiss();
+                // imageViewer.onDismiss();
             }
         });
         tvComment = (TextView) view.findViewById(R.id.btnComment);
@@ -162,7 +162,7 @@ public class MerryPhotoOverlay extends RelativeLayout {
             public void onClick(View v) {
                 int i = Integer.parseInt(v.getTag().toString());
                 imageViewer.onComment(i);
-                imageViewer.onDismiss();
+                // imageViewer.onDismiss();
             }
         });
     }
