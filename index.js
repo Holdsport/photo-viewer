@@ -56,6 +56,7 @@ class MerryPhotoView extends React.Component {
         }
         const { visible, data, initial, ...props } = this.props;
         const dataCopy = [...data];
+        console.log(dataCopy);
         const transformData = this.processor(dataCopy);
         // initial
         let startPosition = initial;

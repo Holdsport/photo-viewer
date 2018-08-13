@@ -8,9 +8,16 @@
     <style name="SimpleButtonStyle" parent="AppTheme">
         <item name="android:background">@null</item>
         <item name="android:textAllCaps">true</item>
-        <item name="android:textSize">24sp</item>
+        <item name="android:textSize">20sp</item>
         <item name="android:textStyle">bold</item>
         <item name="android:textColor">@color/accentText</item>
+    </style>
+    <style name="PagerText" parent="AppTheme">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/accentText</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:ellipsize">end</item>
     </style>
     <style name="SimpleButtonMore" parent="AppTheme">
         <item name="android:background">@null</item>
@@ -27,8 +34,13 @@
     </style>
     <style name="CommentText" parent="AppTheme">
         <item name="android:textColor">@color/accentText</item>
-        <item name="android:maxLines">1</item>
-        <item name="android:ellipsize">end</item>
+        <item name="android:padding">0sp</item>
+        <item name="android:layout_marginLeft">-5dip</item>
+        <item name="android:layout_marginRight">-5dip</item>
+        <item name="android:layout_marginTop">-5dip</item>
+        <item name="android:layout_marginBottom">-5dip</item>
+        <item name="android:minHeight">0dp</item>
+        <item name="android:background">@null</item>
         <item name="android:textSize">14sp</item>
     </style>
     <style name="TitleText" parent="AppTheme">

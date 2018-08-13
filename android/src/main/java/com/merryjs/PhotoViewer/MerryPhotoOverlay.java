@@ -96,6 +96,7 @@ public class MerryPhotoOverlay extends RelativeLayout {
     public void setPosition(int position) {
         tvComment.setTag(position);
         tvMore.setTag(position);
+        tvCmtText.setTag(position);
     }
 
     public void setTitleText(String text) {
