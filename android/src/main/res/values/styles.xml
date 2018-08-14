@@ -28,7 +28,7 @@
         <item name="android:textColor">@color/accentText</item>
     </style>
     <style name="DescriptionText" parent="AppTheme">
-        <item name="android:textColor">@color/accentText</item>
+        <item name="android:textColor">@color/grey</item>
         <item name="android:maxLines">2</item>
         <item name="android:ellipsize">end</item>
         <item name="android:textSize">10sp</item>
