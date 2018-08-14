@@ -7,30 +7,33 @@
 
     <style name="SimpleButtonStyle" parent="AppTheme">
         <item name="android:background">@null</item>
-        <item name="android:textAllCaps">true</item>
         <item name="android:textSize">20sp</item>
-        <item name="android:textStyle">bold</item>
+        <item name="android:paddingTop">12sp</item>
+        <item name="android:paddingRight">12sp</item>
+        <item name="android:paddingLeft">12sp</item>
+        <item name="android:paddingBottom">10sp</item>
         <item name="android:textColor">@color/accentText</item>
     </style>
     <style name="PagerText" parent="AppTheme">
-        <item name="android:textSize">14sp</item>
+        <item name="android:textSize">15sp</item>
         <item name="android:textColor">@color/accentText</item>
-        <item name="android:textStyle">bold</item>
         <item name="android:maxLines">1</item>
         <item name="android:ellipsize">end</item>
+        <item name="android:fontFamily">Lato</item>
     </style>
     <style name="SimpleButtonMore" parent="AppTheme">
         <item name="android:background">@null</item>
-        <item name="android:textAllCaps">true</item>
-        <item name="android:textSize">24sp</item>
-        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:padding">12sp</item>
         <item name="android:textColor">@color/accentText</item>
     </style>
     <style name="DescriptionText" parent="AppTheme">
         <item name="android:textColor">@color/accentText</item>
         <item name="android:maxLines">2</item>
         <item name="android:ellipsize">end</item>
-        <item name="android:textSize">12sp</item>
+        <item name="android:textSize">10sp</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:fontFamily">Lato</item>
     </style>
     <style name="CommentText" parent="AppTheme">
         <item name="android:textColor">@color/accentText</item>
@@ -42,6 +45,7 @@
         <item name="android:minHeight">0dp</item>
         <item name="android:background">@null</item>
         <item name="android:textSize">14sp</item>
+        <item name="android:fontFamily">Lato</item>
     </style>
     <style name="TitleText" parent="AppTheme">
         <item name="android:textSize">16sp</item>
@@ -49,6 +53,7 @@
         <item name="android:textStyle">bold</item>
         <item name="android:maxLines">2</item>
         <item name="android:ellipsize">end</item>
+        <item name="android:fontFamily">Lato</item>
     </style>
 
     <style name="Theme.Transparent" parent="AppTheme">
