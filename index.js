@@ -10,6 +10,7 @@ class MerryPhotoView extends React.Component {
          * Handle UIColor conversions
          * @param data Photo[]
          */
+        this.photoView = null;
         this.processor = (data) => {
             if (data && data.length) {
                 return data.map(o => {
@@ -54,9 +55,9 @@ class MerryPhotoView extends React.Component {
         if (this.props.visible === false) {
             return null;
         }
+        console.log(this.photoView);
         const { visible, data, initial, ...props } = this.props;
         const dataCopy = [...data];
-        console.log(dataCopy);
         const transformData = this.processor(dataCopy);
         // initial
         let startPosition = initial;
@@ -66,7 +67,7 @@ class MerryPhotoView extends React.Component {
         if (initial > dataCopy.length) {
             startPosition = dataCopy.length;
         }
-        return (<RNMerryPhotoView {...props} onActionMore={this.onActionMore} onComment={this.onComment} initial={startPosition} data={transformData} onChange={this.onChange}/>);
+        return (<RNMerryPhotoView ref={r => this.photoView = r} {...props} onActionMore={this.onActionMore} onComment={this.onComment} initial={startPosition} data={transformData} onChange={this.onChange}/>);
     }
 }
 MerryPhotoView.propTypes = {

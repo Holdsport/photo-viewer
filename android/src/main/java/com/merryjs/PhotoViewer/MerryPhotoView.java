@@ -97,6 +97,13 @@ public class MerryPhotoView extends View {
         super(context);
     }
 
+    public void reloadComment(int position) {
+      if(builder == null) {
+          return;
+      }
+      final MerryPhotoData merryPhotoData = getData()[position];
+      overlayView.setCmtText(merryPhotoData.comment);
+    }
 
     protected void init() {
         if(builder != null){
