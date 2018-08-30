@@ -57,7 +57,7 @@ public class MerryPhotoOverlay extends RelativeLayout {
     }
     public void setPagerText(String text) {
         tvTitlePager.setText(text);
-        tvTitlePager.setVisibility((text != "1/1") ? View.VISIBLE : View.GONE);
+        tvTitlePager.setVisibility((text != null) ? View.VISIBLE : View.GONE);
     }
 
     public void setPagerTextColor(String color) {

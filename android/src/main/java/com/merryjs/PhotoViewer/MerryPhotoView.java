@@ -171,8 +171,11 @@ public class MerryPhotoView extends View {
 //                if (options.titlePagerColor != null) {
 //                    overlayView.setPagerTextColor(options.titlePagerColor);
 //                }
-//
-                overlayView.setPagerText((position + 1) + "/" + getData().length);
+                if (getData().length > 1) {
+                  overlayView.setPagerText((position + 1) + "/" + getData().length);
+                } else {
+                  overlayView.setPagerText(null);
+                }
 //
                 if (merryPhotoData.titleColor != 0) {
 
