@@ -57,6 +57,7 @@ public class MerryPhotoOverlay extends RelativeLayout {
     }
     public void setPagerText(String text) {
         tvTitlePager.setText(text);
+        tvTitlePager.setVisibility((text != "1/1") ? View.VISIBLE : View.GONE);
     }
 
     public void setPagerTextColor(String color) {
@@ -71,6 +72,7 @@ public class MerryPhotoOverlay extends RelativeLayout {
     public void setCmtText(String comment) {
         tvCmtText.setText(comment);
         tvCmtText.setVisibility((comment != null) ? View.VISIBLE : View.GONE);
+        tvComment.setVisibility((comment != null) ? View.VISIBLE : View.GONE);
     }
 
     public void setDescriptionTextColor(int color) {
