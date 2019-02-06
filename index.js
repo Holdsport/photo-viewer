@@ -7,7 +7,7 @@ import {
   View
 } from "react-native";
 const resolveAssetSource = require("react-native/Libraries/Image/resolveAssetSource");
-const ImageSourcePropType = require("react-native/Libraries/DeprecatedPropTypes/DeprecatedImageSourcePropType");
+const ImageSourcePropType = require("react-native/Libraries/Image/ImageSourcePropType");
 class MerryPhotoView extends React.Component {
   constructor() {
     super(...arguments);
