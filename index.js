@@ -7,7 +7,6 @@ import {
   View
 } from "react-native";
 const resolveAssetSource = require("react-native/Libraries/Image/resolveAssetSource");
-const ImageSourcePropType = require("react-native/Libraries/Image/ImageSourcePropType");
 class MerryPhotoView extends React.Component {
   constructor() {
     super(...arguments);
@@ -90,7 +89,7 @@ MerryPhotoView.propTypes = {
     PropTypes.shape({
       source:
         Platform.OS === "ios"
-          ? ImageSourcePropType
+          ? PropTypes.string
           : PropTypes.oneOfType([
               PropTypes.shape({
                 uri: PropTypes.string,
