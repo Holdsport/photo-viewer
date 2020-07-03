@@ -27,7 +27,7 @@ public class MerryPhotoOverlay extends RelativeLayout {
     private TextView tvDescription;
     private TextView tvShare;
     private TextView tvClose;
-    private TextView tvMore;
+    //private TextView tvMore;
     private TextView tvCmtText;
     private ImageViewer imageViewer;
     private String sharingText;
@@ -97,7 +97,7 @@ public class MerryPhotoOverlay extends RelativeLayout {
 
     public void setPosition(int position) {
         tvComment.setTag(position);
-        tvMore.setTag(position);
+        //tvMore.setTag(position);
         tvCmtText.setTag(position);
     }
 
@@ -137,16 +137,16 @@ public class MerryPhotoOverlay extends RelativeLayout {
                imageViewer.onDismiss();
             }
         });
-        tvMore = (TextView) view.findViewById(R.id.btnMore);
-        tvMore.setTypeface(Typeface.createFromAsset(getContext().getAssets(), "fonts/materialdesignicons-webfont.ttf"));
-        tvMore.setOnClickListener(new OnClickListener() {
+        //tvMore = (TextView) view.findViewById(R.id.btnMore);
+        //tvMore.setTypeface(Typeface.createFromAsset(getContext().getAssets(), "fonts/materialdesignicons-webfont.ttf"));
+        //tvMore.setOnClickListener(new OnClickListener() {
 
-            @Override
-            public void onClick(View v) {
-                int i = Integer.parseInt(v.getTag().toString());
-                imageViewer.onActionMore(i);
-            }
-        });
+          //  @Override
+           // public void onClick(View v) {
+             //   int i = Integer.parseInt(v.getTag().toString());
+              //  imageViewer.onActionMore(i);
+          //  }
+        //});
         tvCmtText = (TextView) view.findViewById(R.id.tvCmtText);
         tvCmtText.setOnClickListener(new OnClickListener() {
 
