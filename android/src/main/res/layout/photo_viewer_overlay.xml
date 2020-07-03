@@ -95,7 +95,7 @@
             android:layout_below="@id/Line"
         />
 
-        <Button
+        <!-- <Button
             android:id="@+id/btnMore"
             android:layout_width="44dp"
             android:layout_height="44dp"
@@ -109,7 +109,7 @@
             android:textSize="20dp"
             android:text="@string/more"
             android:layout_below="@id/Line"
-        />
+        /> -->
 
     </RelativeLayout>
 </merge>
